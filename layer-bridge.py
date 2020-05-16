@@ -54,11 +54,11 @@ def alice_on(plugin, name="alice_on"):
     as a method with `lightningd`.
 
     """
-    port = 30109
+    port = #your port
     t = threading.Thread(target=peer_management, args=[plugin, port])
     t.daemon = True
     t.start()
-    node_id = '0208f672880dd4c3666e173a319fa19c167582e5bc070d6d62f1464a74c0247de8' # to_bob
+    node_id = # your node to_bob
     t = threading.Thread(target=sendcustommsg, args=[plugin, node_id])
     t.daemon = True
     t.start()
@@ -73,11 +73,11 @@ def bob_on(plugin, name="bob_on"):
     as a method with `lightningd`.
 
     """
-    port = 30108
+    port = # your port
     t = threading.Thread(target=peer_management, args=[plugin, port])
     t.daemon = True
     t.start()
-    node_id = '026e0eca064cfc008ad07630976e618bddc679ebb07cc73073507e020bd4780ed1' # to_alice
+    node_id =  # your node to_alice
     t = threading.Thread(target=sendcustommsg, args=[plugin, node_id])
     t.daemon = True
     t.start()
